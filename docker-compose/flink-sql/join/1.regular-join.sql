@@ -1,6 +1,6 @@
 
 
--- 无需定义 process time 和 even time
+--No need to define process time and even time
 
 CREATE TABLE product (
     id INT,

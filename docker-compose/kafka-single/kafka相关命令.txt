@@ -4,14 +4,14 @@
 /opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic demo
 /opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic demo
 
-## 获取消费者组的消费情况
+## Get the consumption status of the consumer group
 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group demo_consumer_group --describe
 
-## 生产者和消费者
+## producer and consumer
 /opt/bitnami/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic consumerTopic
 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic outputTopic --group test --from-beginning
 
-## json 消息样例
+## json sample message
 {"table":"sausage","event":"user-login","uid":"aaaaa1","event_time":"2022-01-01"}
 {"eventId":"user-login","eventTime":"2022-01-01","uid":1}
 {"eventId":"user-login","eventTime":"2022-01-01","uid":2}

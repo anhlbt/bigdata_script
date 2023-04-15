@@ -1,0 +1,23 @@
+docker-compose exec kafka bash -c 'kafka-console-consumer.sh --topic kafka_gmv --bootstrap-server kafka:9094 --from-beginning'
+
+docker-compose exec kafka bash -c 'kafka-topics.sh --bootstrap-server localhost:9092 --create --topic news --partitions 1 --replication-factor 1'
+
+docker-compose exec kafka bash -c 'kafka-topics.sh --bootstrap-server localhost:9092 --list'
+
+docker-compose exec kafka bash -c 'kafka-console-producer.sh --broker-list localhost:9092 --topic order'
+
+
+
+./kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic news --partitions 1 --replication-factor 1
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic event_log
+./kafka-console-producer.sh --broker-list localhost:9092 --topic product
+./kafka-console-producer.sh --broker-list localhost:9092 --topic order
+
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic event_log --group test --from-beginning
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic wide
+
+
+
